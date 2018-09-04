@@ -3,8 +3,8 @@ class FormInteractor {
     chrome.runtime.onMessage.addListener(this.handler);
   }
 
-  handler () {
-
+  handler (request, sender, sendResponse) {
+    sendResponse();
   }
 }
 
