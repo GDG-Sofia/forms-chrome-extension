@@ -9,7 +9,8 @@
     "build:settings": "ng build --project settings --base-href=settings",
     "test:popup": "ng test --project popup",
     "test:settings": "ng test --project settings",
-    "lint": "ng lint"
+    "lint:popup": "ng lint --project popup",
+    "lint:settings": "ng lint --project settings"
   },
   "private": true,
   "dependencies": {

@@ -10,7 +10,7 @@ declare var chrome: any;
 export class AppComponent {
   title = 'chrome-extension';
 
-  openSettings() {
+  openSettings () {
     chrome.tabs.create({
       url: chrome.runtime.getURL('settings/index.html')
     });
