@@ -5,6 +5,7 @@
     "ng": "ng",
     "serve:popup": "ng serve --project popup",
     "serve:settings": "ng serve --project settings",
+    "build:content": "webpack-cli --config content/webpack.config.js",
     "build:popup": "ng build --project popup --base-href=popup",
     "build:settings": "ng build --project settings --base-href=settings",
     "test:popup": "ng test --project popup",
@@ -43,8 +44,10 @@
     "karma-coverage-istanbul-reporter": "~2.0.0",
     "karma-jasmine": "~1.1.1",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "ts-loader": "^5.0.0",
     "ts-node": "~5.0.1",
     "tslint": "~5.9.1",
-    "typescript": "~2.7.2"
+    "typescript": "~2.7.2",
+    "webpack-cli": "^3.1.0"
   }
 }

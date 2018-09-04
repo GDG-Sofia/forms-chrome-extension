@@ -15,4 +15,12 @@ export class AppComponent {
       url: chrome.runtime.getURL('settings/index.html')
     });
   }
+
+  sendTestEvent () {
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+      const currentTab = tabs[0];
+      chrome.tabs.sendMessage(currentTab.id, {}, (...args) => {
+      });
+    });
+  }
 }
