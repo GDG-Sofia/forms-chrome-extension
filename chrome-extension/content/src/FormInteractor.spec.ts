@@ -1,10 +1,12 @@
 import FormInteractor from './FormInteractor';
+import { JSDOM } from 'jsdom';
 
 const globalAny: any = global;
 
 describe('Form interactor', () => {
   let chrome;
   let interactor;
+  let dom;
   let originalChrome;
   let sendResponse;
 
@@ -40,7 +42,14 @@ describe('Form interactor', () => {
 
   describe('collecting forms', () => {
     beforeEach(() => {
-      interactor = new FormInteractor();
+      const template = `<!doctype html><head><title></title></head>
+<body>
+  <form>
+    <input name="foobar" />
+  </form>
+</body>`;
+      dom = new JSDOM(template);
+      interactor = new FormInteractor(dom.window.document);
       interactor.handler({ action: 'collectForms' }, null, sendResponse);
     });
 
