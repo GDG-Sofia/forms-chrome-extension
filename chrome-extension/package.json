@@ -4,8 +4,11 @@
   "scripts": {
     "ng": "ng",
     "serve:popup": "ng serve --project popup",
+    "serve:settings": "ng serve --project settings",
     "build:popup": "ng build --project popup --base-href=popup",
+    "build:settings": "ng build --project settings --base-href=settings",
     "test:popup": "ng test --project popup",
+    "test:settings": "ng test --project settings",
     "lint": "ng lint"
   },
   "private": true,
