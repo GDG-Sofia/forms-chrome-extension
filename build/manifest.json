@@ -1,0 +1,14 @@
+{
+  "name": "Forms",
+  "manifest_version": 2,
+  "description": "Extension for managing forms",
+  "version": "1.0",
+  "browser_action": {
+    "default_popup": "popup/index.html",
+    "default_title": "Forms"
+  },
+  "permissions": [
+    "activeTab",
+    "tabs"
+  ]
+}
