@@ -47,5 +47,22 @@ describe('Form interactor', () => {
     it('responds back to the collectForms event', () => {
       expect(sendResponse.calls.count()).toEqual(1);
     });
+
+    it('sends back the collected form from the page', () => {
+      expect(sendResponse).toHaveBeenCalledWith(
+        {
+          forms: [
+            {
+              fields: [
+                {
+                  name: 'foobar',
+                  value: null
+                }
+              ]
+            }
+          ]
+        }
+      );
+    });
   });
 });
