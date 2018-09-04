@@ -3,27 +3,27 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "chrome-extension": {
-      "root": "",
+    "popup": {
+      "root": "popup",
       "sourceRoot": "src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "popup",
       "schematics": {},
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/chrome-extension",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.app.json",
+            "outputPath": "../build/popup",
+            "index": "popup/src/index.html",
+            "main": "popup/src/main.ts",
+            "polyfills": "popup/src/polyfills.ts",
+            "tsConfig": "popup/src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "popup/src/styles.css"
             ],
             "scripts": []
           },
@@ -31,8 +31,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "replace": "popup/src/environments/environment.ts",
+                  "with": "popup/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -50,29 +50,29 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "chrome-extension:build"
+            "browserTarget": "popup:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "chrome-extension:build:production"
+              "browserTarget": "popup:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "chrome-extension:build"
+            "browserTarget": "popup:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.spec.json",
-            "karmaConfig": "src/karma.conf.js",
+            "main": "popup/src/test.ts",
+            "polyfills": "popup/src/polyfills.ts",
+            "tsConfig": "popup/src/tsconfig.spec.json",
+            "karmaConfig": "popup/src/karma.conf.js",
             "styles": [
-              "src/styles.css"
+              "popup/src/styles.css"
             ],
             "scripts": [],
             "assets": [
@@ -85,8 +85,8 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "src/tsconfig.app.json",
-              "src/tsconfig.spec.json"
+              "popup/src/tsconfig.app.json",
+              "popup/src/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -96,5 +96,5 @@
       }
     }
   },
-  "defaultProject": "chrome-extension"
+  "defaultProject": "popup"
 }

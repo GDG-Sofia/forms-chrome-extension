@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
+    "serve:popup": "ng serve --project popup",
+    "build:popup": "ng build --project popup --base-href=popup",
+    "test:popup": "ng test --project popup",
     "lint": "ng lint"
   },
   "private": true,
