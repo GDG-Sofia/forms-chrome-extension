@@ -6,6 +6,7 @@ describe('Form interactor', () => {
   let chrome;
   let interactor;
   let originalChrome;
+  let sendResponse;
 
   beforeEach(() => {
     originalChrome = globalAny.chrome;
@@ -18,6 +19,7 @@ describe('Form interactor', () => {
       }
     };
     globalAny.chrome = chrome;
+    sendResponse = jasmine.createSpy('sendResponse');
     spyOn(chrome.runtime.onMessage, 'addListener').and.stub();
   });
 
@@ -33,6 +35,17 @@ describe('Form interactor', () => {
     it('sets up listeners for events from the browser action (popup)', () => {
       expect(chrome.runtime.onMessage.addListener.calls.count()).toEqual(1);
       expect(chrome.runtime.onMessage.addListener).toHaveBeenCalledWith(interactor.handler);
+    });
+  });
+
+  describe('collecting forms', () => {
+    beforeEach(() => {
+      interactor = new FormInteractor();
+      interactor.handler({ action: 'collectForms' }, null, sendResponse);
+    });
+
+    it('responds back to the collectForms event', () => {
+      expect(sendResponse.calls.count()).toEqual(1);
     });
   });
 });
