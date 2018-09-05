@@ -53,7 +53,7 @@ describe('Form interactor', () => {
     //    - [x] has null id attribute
     //    - [x] has null classList attribute
     // - [x] form (attribute action)
-    // - [ ] form (attribute id)
+    // - [x] form (attribute id)
     // - [ ] form (attribute class)
     // - [x] form with one field (name)
     // - [ ] form with one field (id)
@@ -101,7 +101,13 @@ describe('Form interactor', () => {
         document: templates.formWithActionAttribute,
         result: arg => arg.forms[0].action,
         expected: 'form/action'
-      }
+      },
+      {
+        test: 'one form with an id attribute',
+        document: templates.formWithIdAttribute,
+        result: arg => arg.forms[0].id,
+        expected: 'form-unique-id'
+      },
     ];
 
     tests.forEach(t => {

@@ -22,11 +22,18 @@ const formWithActionAttribute = `<!doctype html><head><title></title></head>
   </form>
 </body>`;
 
+const formWithIdAttribute = `<!doctype html><head><title></title></head>
+<body>
+  <form id="form-unique-id">
+  </form>
+</body>`;
+
 const templates = {
   noForms,
   formWithNoAttributes,
   formWithNameField,
   formWithActionAttribute,
+  formWithIdAttribute,
 };
 
 export default templates;
