@@ -22,9 +22,11 @@ class FormInteractor {
       };
 
       f.querySelectorAll('input').forEach(input => {
+        const fieldClassNames = input.getAttribute('class');
         form.fields.push({
           name: input.getAttribute('name'),
-          id: input.getAttribute('id')
+          id: input.getAttribute('id'),
+          classList: !fieldClassNames ? null : fieldClassNames.split(' ').sort()
         });
       });
 
