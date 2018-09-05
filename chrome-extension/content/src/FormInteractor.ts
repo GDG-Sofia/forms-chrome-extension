@@ -10,33 +10,24 @@ class FormInteractor {
   }
 
   handler (request, sender, sendResponse) {
-    const forms = this.doc.querySelectorAll('form');
+    const forms = [];
 
-    if (!forms.length) {
-      return sendResponse({ forms: [] });
-    }
+    this.doc.querySelectorAll('form').forEach(f => {
+      const form = {
+        action: f.getAttribute('action'),
+        fields: []
+      };
 
-    const action = forms[0].getAttribute('action');
+      f.querySelectorAll('input').forEach(input => {
+        form.fields.push({
+          name: input.getAttribute('name')
+        });
+      });
 
-    const input = forms[0].querySelector('input');
-    let name = null;
-    if (input) {
-      name = input.getAttribute('name');
-    }
-    const response = {
-      forms: [
-        {
-          action,
-          fields: [
-            {
-              name: name,
-              value: null
-            }
-          ]
-        }
-      ]
-    };
-    sendResponse(response);
+      forms.push(form);
+    });
+
+    sendResponse({ forms });
   }
 }
 
