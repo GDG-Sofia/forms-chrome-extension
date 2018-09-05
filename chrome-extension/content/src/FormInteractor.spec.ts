@@ -1,12 +1,12 @@
 import FormInteractor from './FormInteractor';
 import { JSDOM } from 'jsdom';
+import templates from '../test.templates';
 
 const globalAny: any = global;
 
 describe('Form interactor', () => {
   let chrome;
   let interactor;
-  let dom;
   let originalChrome;
   let sendResponse;
 
@@ -29,9 +29,14 @@ describe('Form interactor', () => {
     globalAny.chrome = originalChrome;
   });
 
+  const createInteractor = (template) => {
+    const dom = new JSDOM(template);
+    return new FormInteractor(dom.window.document);
+  };
+
   describe('when setListeners is called', () => {
     beforeEach(() => {
-      interactor = new FormInteractor();
+      interactor = createInteractor(templates.formWithNameField);
       interactor.setListeners();
     });
     it('sets up listeners for events from the browser action (popup)', () => {
@@ -42,14 +47,7 @@ describe('Form interactor', () => {
 
   describe('collecting forms', () => {
     beforeEach(() => {
-      const template = `<!doctype html><head><title></title></head>
-<body>
-  <form>
-    <input name="foobar" />
-  </form>
-</body>`;
-      dom = new JSDOM(template);
-      interactor = new FormInteractor(dom.window.document);
+      interactor = createInteractor(templates.formWithNameField);
       interactor.handler({ action: 'collectForms' }, null, sendResponse);
     });
 
@@ -58,20 +56,8 @@ describe('Form interactor', () => {
     });
 
     it('sends back the collected form from the page', () => {
-      expect(sendResponse).toHaveBeenCalledWith(
-        {
-          forms: [
-            {
-              fields: [
-                {
-                  name: 'foobar',
-                  value: null
-                }
-              ]
-            }
-          ]
-        }
-      );
+      expect(sendResponse.calls.mostRecent().args[0].forms[0].fields[0].name)
+        .toEqual('foobar');
     });
   });
 });
