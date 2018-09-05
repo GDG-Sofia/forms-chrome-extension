@@ -50,7 +50,7 @@ describe('Form interactor', () => {
     // - [x] no forms
     // - [ ] form with no attributes
     //    - [x] has null action
-    //    - [ ] has null id attribute
+    //    - [x] has null id attribute
     //    - [ ] has null classList attribute
     // - [ ] form (attribute action)
     // - [ ] form (attribute id)

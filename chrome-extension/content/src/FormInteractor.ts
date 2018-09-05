@@ -15,6 +15,7 @@ class FormInteractor {
     this.doc.querySelectorAll('form').forEach(f => {
       const form = {
         action: f.getAttribute('action'),
+        id: f.getAttribute('id'),
         fields: []
       };
 
