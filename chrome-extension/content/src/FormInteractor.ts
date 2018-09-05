@@ -23,7 +23,8 @@ class FormInteractor {
 
       f.querySelectorAll('input').forEach(input => {
         form.fields.push({
-          name: input.getAttribute('name')
+          name: input.getAttribute('name'),
+          id: input.getAttribute('id')
         });
       });
 
