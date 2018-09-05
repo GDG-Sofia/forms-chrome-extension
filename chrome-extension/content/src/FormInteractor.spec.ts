@@ -48,10 +48,10 @@ describe('Form interactor', () => {
   describe('collecting forms', () => {
     // @todo:
     // - [x] no forms
-    // - [ ] form with no attributes
+    // - [x] form with no attributes
     //    - [x] has null action
     //    - [x] has null id attribute
-    //    - [ ] has null classList attribute
+    //    - [x] has null classList attribute
     // - [ ] form (attribute action)
     // - [ ] form (attribute id)
     // - [ ] form (attribute class)

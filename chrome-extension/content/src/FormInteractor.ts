@@ -16,6 +16,7 @@ class FormInteractor {
       const form = {
         action: f.getAttribute('action'),
         id: f.getAttribute('id'),
+        classList: f.getAttribute('class'),
         fields: []
       };
 
