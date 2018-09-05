@@ -16,10 +16,17 @@ class FormInteractor {
       return sendResponse({ forms: [] });
     }
 
-    const name = this.doc.querySelector('form').querySelector('input').getAttribute('name');
+    const action = forms[0].getAttribute('action');
+
+    const input = forms[0].querySelector('input');
+    let name = null;
+    if (input) {
+      name = input.getAttribute('name');
+    }
     const response = {
       forms: [
         {
+          action,
           fields: [
             {
               name: name,

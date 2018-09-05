@@ -76,7 +76,7 @@ describe('Form interactor', () => {
         expected: 'foobar'
       },
       {
-        test: 'one form with no attributes',
+        test: 'one form with no attributes, has a null action attribute',
         document: templates.formWithNoAttributes,
         result: arg => arg.forms[0].action,
         expected: null
