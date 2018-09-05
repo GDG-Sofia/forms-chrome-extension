@@ -120,6 +120,12 @@ describe('Form interactor', () => {
         result: arg => arg.forms[0].fields[0].id,
         expected: 'username'
       },
+      {
+        test: 'one form with one field with a classList attribute',
+        document: templates.formWithFieldWithClassList,
+        result: arg => arg.forms[0].fields[0].classList,
+        expected: ['bar', 'foo']
+      },
     ];
 
     tests.forEach(t => {
