@@ -28,12 +28,19 @@ const formWithIdAttribute = `<!doctype html><head><title></title></head>
   </form>
 </body>`;
 
+const formWithClassAttribute = `<!doctype html><head><title></title></head>
+<body>
+  <form class="foo bar">
+  </form>
+</body>`;
+
 const templates = {
   noForms,
   formWithNoAttributes,
   formWithNameField,
   formWithActionAttribute,
   formWithIdAttribute,
+  formWithClassAttribute,
 };
 
 export default templates;

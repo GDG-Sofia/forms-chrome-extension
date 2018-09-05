@@ -108,6 +108,12 @@ describe('Form interactor', () => {
         result: arg => arg.forms[0].id,
         expected: 'form-unique-id'
       },
+      {
+        test: 'one form with a classList attribute',
+        document: templates.formWithClassAttribute,
+        result: arg => arg.forms[0].classList,
+        expected: ['foo', 'bar']
+      },
     ];
 
     tests.forEach(t => {
