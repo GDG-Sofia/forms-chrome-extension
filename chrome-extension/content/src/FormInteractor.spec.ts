@@ -47,7 +47,7 @@ describe('Form interactor', () => {
 
   describe('collecting forms', () => {
     // @todo:
-    // - [ ] no forms
+    // - [x] no forms
     // - [ ] form (attribute action)
     // - [ ] form (attribute id)
     // - [ ] form (attribute class)
@@ -57,36 +57,40 @@ describe('Form interactor', () => {
     // - [ ] form with one field (nodeType [input, select, textarea])
     // - [ ] form with one field (inputType [text, password, hidden])
     // - [ ] form with one field (value)
+    // - [ ] integration test, all fields
+    // - [ ] multiple forms, all fields
+    const tests = [
+      {
+        test: 'no forms available',
+        document: templates.noForms,
+        result: arg => arg,
+        expected: {
+          forms: []
+        }
+      },
+      {
+        test: 'one form with one field with a name attribute',
+        document: templates.formWithNameField,
+        result: arg => arg.forms[0].fields[0].name,
+        expected: 'foobar'
+      }
+    ];
 
-    describe('no forms available', () => {
-      beforeEach(() => {
-        interactor = createInteractor(templates.noForms);
-        interactor.handler({ action: 'collectForms' }, null, sendResponse);
-      });
+    tests.forEach(t => {
+      describe(t.test, () => {
+        beforeEach(() => {
+          interactor = createInteractor(t.document);
+          interactor.handler({ action: 'collectForms' }, null, sendResponse);
+        });
 
-      it('responds back to the collectForms event', () => {
-        expect(sendResponse.calls.count()).toEqual(1);
-      });
+        it('responds back to the collectForms event', () => {
+          expect(sendResponse.calls.count()).toEqual(1);
+        });
 
-      it('sends back the collected form from the page', () => {
-        expect(sendResponse.calls.mostRecent().args[0])
-          .toEqual({ forms: [] });
-      });
-    });
-
-    describe('one form with one field with a name attribute', () => {
-      beforeEach(() => {
-        interactor = createInteractor(templates.formWithNameField);
-        interactor.handler({ action: 'collectForms' }, null, sendResponse);
-      });
-
-      it('responds back to the collectForms event', () => {
-        expect(sendResponse.calls.count()).toEqual(1);
-      });
-
-      it('sends back the collected form from the page', () => {
-        expect(sendResponse.calls.mostRecent().args[0].forms[0].fields[0].name)
-          .toEqual('foobar');
+        it('sends back the collected form from the page', () => {
+          expect(t.result(sendResponse.calls.mostRecent().args[0]))
+            .toEqual(t.expected);
+        });
       });
     });
   });
