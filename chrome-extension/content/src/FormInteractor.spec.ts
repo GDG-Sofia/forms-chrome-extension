@@ -90,6 +90,12 @@ describe('Form interactor', () => {
         result: arg => arg.forms[0].id,
         expected: null
       },
+      {
+        test: 'one form with no attributes, has a null classList attribute',
+        document: templates.formWithNoAttributes,
+        result: arg => arg.forms[0].classList,
+        expected: null
+      },
       // {
       //   test: 'one form with an action attribute',
       //   document: templates.formWithActionAttribute,
