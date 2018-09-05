@@ -10,7 +10,7 @@ const formWithNameField = `<!doctype html><head><title></title></head>
   </form>
 </body>`;
 
-const formWithNoInputsAndNoAttributes = `<!doctype html><head><title></title></head>
+const formWithNoAttributes = `<!doctype html><head><title></title></head>
 <body>
   <form>
   </form>
@@ -24,7 +24,7 @@ const formWithActionAttribute = `<!doctype html><head><title></title></head>
 
 const templates = {
   noForms,
-  formWithNoInputsAndNoAttributes,
+  formWithNoAttributes,
   formWithNameField,
   formWithActionAttribute,
 };

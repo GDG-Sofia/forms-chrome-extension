@@ -76,10 +76,10 @@ describe('Form interactor', () => {
         expected: 'foobar'
       },
       {
-        test: 'one form with no inputs and no attributes',
-        document: templates.formWithNoInputsAndNoAttributes,
-        result: arg => arg.forms[0],
-        expected: {}
+        test: 'one form with no attributes',
+        document: templates.formWithNoAttributes,
+        result: arg => arg.forms[0].action,
+        expected: null
       },
       // {
       //   test: 'one form with an action attribute',
