@@ -13,10 +13,11 @@ class FormInteractor {
     const forms = [];
 
     this.doc.querySelectorAll('form').forEach(f => {
+      const classNames = f.getAttribute('class');
       const form = {
         action: f.getAttribute('action'),
         id: f.getAttribute('id'),
-        classList: f.getAttribute('class'),
+        classList: !classNames ? null : classNames.split(' ').sort(),
         fields: []
       };
 

@@ -54,7 +54,7 @@ describe('Form interactor', () => {
     //    - [x] has null classList attribute
     // - [x] form (attribute action)
     // - [x] form (attribute id)
-    // - [ ] form (attribute class)
+    // - [x] form (attribute class)
     // - [x] form with one field (name)
     // - [ ] form with one field (id)
     // - [ ] form with one field (class)
@@ -112,7 +112,7 @@ describe('Form interactor', () => {
         test: 'one form with a classList attribute',
         document: templates.formWithClassAttribute,
         result: arg => arg.forms[0].classList,
-        expected: ['foo', 'bar']
+        expected: ['bar', 'foo']
       },
     ];
 
