@@ -34,6 +34,13 @@ const formWithClassAttribute = `<!doctype html><head><title></title></head>
   </form>
 </body>`;
 
+const formWithFieldWithId = `<!doctype html><head><title></title></head>
+<body>
+  <form>
+    <input id="username" />
+  </form>
+</body>`;
+
 const templates = {
   noForms,
   formWithNoAttributes,
@@ -41,6 +48,7 @@ const templates = {
   formWithActionAttribute,
   formWithIdAttribute,
   formWithClassAttribute,
+  formWithFieldWithId,
 };
 
 export default templates;
