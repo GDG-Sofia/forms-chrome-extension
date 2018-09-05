@@ -48,6 +48,7 @@ describe('Form interactor', () => {
   describe('collecting forms', () => {
     // @todo:
     // - [x] no forms
+    // - [ ] form with no inputs/fields and no attributes
     // - [ ] form (attribute action)
     // - [ ] form (attribute id)
     // - [ ] form (attribute class)
@@ -73,7 +74,19 @@ describe('Form interactor', () => {
         document: templates.formWithNameField,
         result: arg => arg.forms[0].fields[0].name,
         expected: 'foobar'
-      }
+      },
+      {
+        test: 'one form with no inputs and no attributes',
+        document: templates.formWithNoInputsAndNoAttributes,
+        result: arg => arg.forms[0],
+        expected: {}
+      },
+      // {
+      //   test: 'one form with an action attribute',
+      //   document: templates.formWithActionAttribute,
+      //   result: arg => arg.forms[0].action,
+      //   expected: 'form/action'
+      // }
     ];
 
     tests.forEach(t => {
