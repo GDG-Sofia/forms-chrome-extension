@@ -156,6 +156,12 @@ describe('Form interactor', () => {
         result: arg => arg.forms[0].fields[0].nodeType,
         expected: 'input'
       },
+      {
+        test: 'one form with hidden input',
+        document: templates.formWithHiddenInput,
+        result: arg => arg.forms[0].fields[0].subType,
+        expected: 'hidden'
+      },
     ];
 
     tests.forEach(t => {

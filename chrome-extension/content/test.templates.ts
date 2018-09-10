@@ -62,6 +62,13 @@ const formWithNodeTypeInput = `<!doctype html><head><title></title></head>
   </form>
 </body>`;
 
+const formWithHiddenInput = `<!doctype html><head><title></title></head>
+<body>
+  <form>
+    <input type="hidden" />
+  </form>
+</body>`;
+
 const templates = {
   noForms,
   formWithNoAttributes,
@@ -73,6 +80,7 @@ const templates = {
   formWithFieldWithClassList,
   formWithFieldWithValue,
   formWithNodeTypeInput,
+  formWithHiddenInput,
 };
 
 export default templates;
