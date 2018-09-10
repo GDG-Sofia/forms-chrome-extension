@@ -150,6 +150,12 @@ describe('Form interactor', () => {
         result: arg => arg.forms[0].fields[0].value,
         expected: 'foobar'
       },
+      {
+        test: 'one form with one field which is an input nodeType',
+        document: templates.formWithNodeTypeInput,
+        result: arg => arg.forms[0].fields[0].nodeType,
+        expected: 'input'
+      },
     ];
 
     tests.forEach(t => {
