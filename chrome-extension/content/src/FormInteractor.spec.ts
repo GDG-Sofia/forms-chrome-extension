@@ -169,7 +169,7 @@ describe('Form interactor', () => {
         expected: 'text'
       },
       {
-        test: 'one form with text input',
+        test: 'one form with password input',
         document: templates.formWithPasswordInput,
         result: arg => arg.forms[0].fields.length,
         expected: 0
