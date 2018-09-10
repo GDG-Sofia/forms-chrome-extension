@@ -55,13 +55,31 @@ describe('Form interactor', () => {
     // - [x] form (attribute action)
     // - [x] form (attribute id)
     // - [x] form (attribute class)
-    // - [x] form with one field (name)
-    // - [x] form with one field (id)
-    // - [x] form with one field (class)
-    // - [ ] form with one field (nodeType [input, select, textarea])
-    // - [ ] form with one field (inputType [text, password, hidden])
-    // - [ ] form with one field (value)
-    // - [ ] integration test, all fields
+    //    - [ ] input field
+    //       - [x] form with one field (name)
+    //       - [x] form with one field (id)
+    //       - [x] form with one field (class)
+    //       - [ ] form with one field (value)
+    //       - [ ] form with one field (nodeType input)
+    //          - [ ] field with subType hidden
+    //          - [ ] field with subType text
+    //          - [ ] field with subType password (does not get collected)
+    //    - [ ] select
+    //       - [ ] form with one field (value)
+    //       - [ ] form with one field (name)
+    //       - [ ] form with one field (id)
+    //       - [ ] form with one field (class)
+    //       - [ ] form with one field (nodeType select)
+    //          - [ ] subType is null
+    //    - [ ] textarea
+    //       - [ ] form with one field (value)
+    //       - [ ] form with one field (name)
+    //       - [ ] form with one field (id)
+    //       - [ ] form with one field (class)
+    //       - [ ] form with one field (nodeType textarea)
+    //          - [ ] subType is null
+    // - [ ] integration test, all fields missing (null values)
+    // - [ ] integration test, all fields present
     // - [ ] multiple forms, all fields
     const tests = [
       {
@@ -125,6 +143,12 @@ describe('Form interactor', () => {
         document: templates.formWithFieldWithClassList,
         result: arg => arg.forms[0].fields[0].classList,
         expected: ['bar', 'foo']
+      },
+      {
+        test: 'one form with one field with a value attribute',
+        document: templates.formWithFieldWithValue,
+        result: arg => arg.forms[0].fields[0].value,
+        expected: 'foobar'
       },
     ];
 
