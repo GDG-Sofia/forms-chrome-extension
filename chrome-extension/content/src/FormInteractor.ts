@@ -24,6 +24,7 @@ class FormInteractor {
       f.querySelectorAll('input').forEach(input => {
         const fieldClassNames = input.getAttribute('class');
         form.fields.push({
+          nodeType: 'input',
           name: input.getAttribute('name'),
           id: input.getAttribute('id'),
           classList: !fieldClassNames ? null : fieldClassNames.split(' ').sort(),
