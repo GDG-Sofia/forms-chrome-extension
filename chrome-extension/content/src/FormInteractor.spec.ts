@@ -168,6 +168,12 @@ describe('Form interactor', () => {
         result: arg => arg.forms[0].fields[0].subType,
         expected: 'text'
       },
+      {
+        test: 'one form with text input',
+        document: templates.formWithPasswordInput,
+        result: arg => arg.forms[0].fields.length,
+        expected: 0
+      },
     ];
 
     tests.forEach(t => {
