@@ -26,7 +26,8 @@ class FormInteractor {
         form.fields.push({
           name: input.getAttribute('name'),
           id: input.getAttribute('id'),
-          classList: !fieldClassNames ? null : fieldClassNames.split(' ').sort()
+          classList: !fieldClassNames ? null : fieldClassNames.split(' ').sort(),
+          value: input.getAttribute('value')
         });
       });
 

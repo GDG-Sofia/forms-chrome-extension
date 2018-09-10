@@ -59,7 +59,7 @@ describe('Form interactor', () => {
     //       - [x] form with one field (name)
     //       - [x] form with one field (id)
     //       - [x] form with one field (class)
-    //       - [ ] form with one field (value)
+    //       - [x] form with one field (value)
     //       - [ ] form with one field (nodeType input)
     //          - [ ] field with subType hidden
     //          - [ ] field with subType text
