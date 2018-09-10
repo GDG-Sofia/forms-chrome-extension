@@ -23,9 +23,13 @@ class FormInteractor {
 
       f.querySelectorAll('input').forEach(input => {
         const fieldClassNames = input.getAttribute('class');
+        const subType = input.getAttribute('type');
+        if (subType === 'password') {
+          return;
+        }
         form.fields.push({
           nodeType: 'input',
-          subType: input.getAttribute('type'),
+          subType,
           name: input.getAttribute('name'),
           id: input.getAttribute('id'),
           classList: !fieldClassNames ? null : fieldClassNames.split(' ').sort(),
