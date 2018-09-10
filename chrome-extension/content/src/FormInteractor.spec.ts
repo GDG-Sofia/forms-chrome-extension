@@ -62,7 +62,7 @@ describe('Form interactor', () => {
     //       - [x] form with one field (value)
     //       - [x] form with one field (nodeType input)
     //          - [x] field with subType hidden
-    //          - [ ] field with subType text
+    //          - [x] field with subType text
     //          - [ ] field with subType password (does not get collected)
     //    - [ ] select
     //       - [ ] form with one field (value)
@@ -161,6 +161,12 @@ describe('Form interactor', () => {
         document: templates.formWithHiddenInput,
         result: arg => arg.forms[0].fields[0].subType,
         expected: 'hidden'
+      },
+      {
+        test: 'one form with text input',
+        document: templates.formWithTextInput,
+        result: arg => arg.forms[0].fields[0].subType,
+        expected: 'text'
       },
     ];
 
