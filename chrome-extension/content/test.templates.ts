@@ -107,6 +107,13 @@ const formWithSelectFieldClassAttribute = `<!doctype html><head><title></title><
   </form>
 </body>`;
 
+const formWithNodeTypeSelect = `<!doctype html><head><title></title></head>
+<body>
+  <form>
+    <select></select>
+  </form>
+</body>`;
+
 const templates = {
   noForms,
   formWithNoAttributes,
@@ -124,6 +131,7 @@ const templates = {
   formWithSelectFieldNameAttribute,
   formWithSelectFieldIdAttribute,
   formWithSelectFieldClassAttribute,
+  formWithNodeTypeSelect,
 };
 
 export default templates;
