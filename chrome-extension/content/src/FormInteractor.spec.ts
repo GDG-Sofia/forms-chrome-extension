@@ -64,13 +64,13 @@ describe('Form interactor', () => {
     //          - [x] field with subType hidden
     //          - [x] field with subType text
     //          - [x] field with subType password (does not get collected)
-    //    - [ ] select
+    //    - [x] select
     //       - [x] form with one field (value)
     //       - [x] form with one field (name)
     //       - [x] form with one field (id)
     //       - [x] form with one field (class)
     //       - [x] form with one field (nodeType select)
-    //          - [ ] subType is null
+    //          - [x] subType is null
     //    - [ ] textarea
     //       - [ ] form with one field (value)
     //       - [ ] form with one field (name)
@@ -203,6 +203,12 @@ describe('Form interactor', () => {
         document: templates.formWithSelectFieldValueAttribute,
         result: arg => arg.forms[0].fields[0].value,
         expected: 'bar'
+      },
+      {
+        test: 'select subType is null',
+        document: templates.formWithNodeTypeSelect,
+        result: arg => arg.forms[0].fields[0].subType,
+        expected: null
       },
     ];
 
