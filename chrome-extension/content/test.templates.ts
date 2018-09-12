@@ -83,6 +83,14 @@ const formWithPasswordInput = `<!doctype html><head><title></title></head>
   </form>
 </body>`;
 
+const formWithSelectFieldNameAttribute = `<!doctype html><head><title></title></head>
+<body>
+  <form>
+    <select name="foobar">
+    </select>
+  </form>
+</body>`;
+
 const templates = {
   noForms,
   formWithNoAttributes,
@@ -97,6 +105,7 @@ const templates = {
   formWithHiddenInput,
   formWithTextInput,
   formWithPasswordInput,
+  formWithSelectFieldNameAttribute,
 };
 
 export default templates;

@@ -174,6 +174,12 @@ describe('Form interactor', () => {
         result: arg => arg.forms[0].fields.length,
         expected: 0
       },
+      {
+        test: 'can fetch select attribute',
+        document: templates.formWithSelectFieldNameAttribute,
+        result: arg => arg.forms[0].fields[0].name,
+        expected: 'foobar'
+      },
     ];
 
     tests.forEach(t => {
