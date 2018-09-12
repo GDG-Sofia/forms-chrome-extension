@@ -125,6 +125,14 @@ const formWithSelectFieldValueAttribute = `<!doctype html><head><title></title><
   </form>
 </body>`;
 
+
+const formWithTextareaFieldNameAttribute = `<!doctype html><head><title></title></head>
+<body>
+  <form>
+    <textarea name="textarea-name"></textarea>
+  </form>
+</body>`;
+
 const templates = {
   noForms,
   formWithNoAttributes,
@@ -144,6 +152,7 @@ const templates = {
   formWithSelectFieldClassAttribute,
   formWithNodeTypeSelect,
   formWithSelectFieldValueAttribute,
+  formWithTextareaFieldNameAttribute,
 };
 
 export default templates;

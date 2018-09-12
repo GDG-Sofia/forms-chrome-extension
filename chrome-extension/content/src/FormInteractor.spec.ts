@@ -181,7 +181,7 @@ describe('Form interactor', () => {
         expected: 'foobar'
       },
       {
-        test: 'can fetch select attribute',
+        test: 'can fetch select name attribute',
         document: templates.formWithSelectFieldIdAttribute,
         result: arg => arg.forms[0].fields[0].id,
         expected: 'select-id'
@@ -209,6 +209,12 @@ describe('Form interactor', () => {
         document: templates.formWithNodeTypeSelect,
         result: arg => arg.forms[0].fields[0].subType,
         expected: null
+      },
+      {
+        test: 'can fetch textarea name attribute',
+        document: templates.formWithTextareaFieldNameAttribute,
+        result: arg => arg.forms[0].fields[0].name,
+        expected: 'textarea-name'
       },
     ];
 
