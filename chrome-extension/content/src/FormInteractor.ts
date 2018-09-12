@@ -21,13 +21,13 @@ class FormInteractor {
         fields: []
       };
 
-      f.querySelectorAll('input, select').forEach(input => {
+      f.querySelectorAll('input, select, textarea').forEach(input => {
         const fieldClassNames = input.getAttribute('class');
         const subType = input.getAttribute('type');
         if (subType === 'password') {
           return;
         }
-        const nodeTypes = ['input', 'select'];
+        const nodeTypes = ['input', 'select', 'textarea'];
         const nodeType = nodeTypes.find(t => t.toUpperCase() === input.nodeName);
         if (!nodeType) {
           return;

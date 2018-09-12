@@ -73,7 +73,7 @@ describe('Form interactor', () => {
     //          - [x] subType is null
     //    - [ ] textarea
     //       - [ ] form with one field (value)
-    //       - [ ] form with one field (name)
+    //       - [x] form with one field (name)
     //       - [ ] form with one field (id)
     //       - [ ] form with one field (class)
     //       - [ ] form with one field (nodeType textarea)
