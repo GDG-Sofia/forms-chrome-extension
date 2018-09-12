@@ -68,7 +68,7 @@ describe('Form interactor', () => {
     //       - [ ] form with one field (value)
     //       - [x] form with one field (name)
     //       - [x] form with one field (id)
-    //       - [ ] form with one field (class)
+    //       - [x] form with one field (class)
     //       - [ ] form with one field (nodeType select)
     //          - [ ] subType is null
     //    - [ ] textarea
@@ -186,6 +186,12 @@ describe('Form interactor', () => {
         result: arg => arg.forms[0].fields[0].id,
         expected: 'select-id'
       },
+      {
+        test: 'can fetch select class list',
+        document: templates.formWithSelectFieldClassAttribute,
+        result: arg => arg.forms[0].fields[0].classList,
+        expected: ['bar', 'foo']
+      }
     ];
 
     tests.forEach(t => {
