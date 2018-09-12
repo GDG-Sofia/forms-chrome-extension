@@ -27,8 +27,13 @@ class FormInteractor {
         if (subType === 'password') {
           return;
         }
+        const nodeTypes = ['input', 'select'];
+        const nodeType = nodeTypes.find(t => t.toUpperCase() === input.nodeName);
+        if (!nodeType) {
+          return;
+        }
         form.fields.push({
-          nodeType: 'input',
+          nodeType,
           subType,
           name: input.getAttribute('name'),
           id: input.getAttribute('id'),
