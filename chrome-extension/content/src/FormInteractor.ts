@@ -21,7 +21,7 @@ class FormInteractor {
         fields: []
       };
 
-      f.querySelectorAll('input').forEach(input => {
+      f.querySelectorAll('input, select').forEach(input => {
         const fieldClassNames = input.getAttribute('class');
         const subType = input.getAttribute('type');
         if (subType === 'password') {
