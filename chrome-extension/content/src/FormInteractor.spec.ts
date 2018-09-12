@@ -67,7 +67,7 @@ describe('Form interactor', () => {
     //    - [ ] select
     //       - [ ] form with one field (value)
     //       - [x] form with one field (name)
-    //       - [ ] form with one field (id)
+    //       - [x] form with one field (id)
     //       - [ ] form with one field (class)
     //       - [ ] form with one field (nodeType select)
     //          - [ ] subType is null
@@ -175,10 +175,16 @@ describe('Form interactor', () => {
         expected: 0
       },
       {
-        test: 'can fetch select attribute',
+        test: 'can fetch select name attribute',
         document: templates.formWithSelectFieldNameAttribute,
         result: arg => arg.forms[0].fields[0].name,
         expected: 'foobar'
+      },
+      {
+        test: 'can fetch select attribute',
+        document: templates.formWithSelectFieldIdAttribute,
+        result: arg => arg.forms[0].fields[0].id,
+        expected: 'select-id'
       },
     ];
 
