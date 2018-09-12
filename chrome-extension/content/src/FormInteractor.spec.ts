@@ -65,7 +65,7 @@ describe('Form interactor', () => {
     //          - [x] field with subType text
     //          - [x] field with subType password (does not get collected)
     //    - [ ] select
-    //       - [ ] form with one field (value)
+    //       - [x] form with one field (value)
     //       - [x] form with one field (name)
     //       - [x] form with one field (id)
     //       - [x] form with one field (class)

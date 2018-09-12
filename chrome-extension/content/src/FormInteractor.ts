@@ -38,7 +38,7 @@ class FormInteractor {
           name: input.getAttribute('name'),
           id: input.getAttribute('id'),
           classList: !fieldClassNames ? null : fieldClassNames.split(' ').sort(),
-          value: input.getAttribute('value')
+          value: input.value
         });
       });
 
