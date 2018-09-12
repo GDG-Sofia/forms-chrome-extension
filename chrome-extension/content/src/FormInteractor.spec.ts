@@ -198,6 +198,12 @@ describe('Form interactor', () => {
         result: arg => arg.forms[0].fields[0].nodeType,
         expected: 'select'
       },
+      {
+        test: 'can fetch select value',
+        document: templates.formWithSelectFieldValueAttribute,
+        result: arg => arg.forms[0].fields[0].value,
+        expected: 'bar'
+      },
     ];
 
     tests.forEach(t => {
